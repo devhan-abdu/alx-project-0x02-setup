@@ -1,10 +1,10 @@
 import Card from '@/components/common/Card';
 import React, { useState } from 'react'
 import PostModel from '@/components/common/PostModel';
-import { CardData } from '@/interfaces';
+import { CardProps } from '@/interfaces';
 import Header from '@/components/layout/Header';
 
-const cardData = [
+const CardProps = [
   {
     id: 1,
     title: 'Card 1',
@@ -29,10 +29,10 @@ const cardData = [
 ]
 
 const Home = () => {
-  const [post , setPost] = useState<CardData[]>(cardData);
+  const [post , setPost] = useState<CardProps[]>(CardProps);
   const [open, setOpen] = useState(false); 
 
-  const handleAddPost = (newPost: CardData) => {
+  const handleAddPost = (newPost: CardProps) => {
     const newpost = {...newPost, id: post ? post.length + 1 : 1};
     setPost((prevPost)=>[...prevPost, newPost])
   }

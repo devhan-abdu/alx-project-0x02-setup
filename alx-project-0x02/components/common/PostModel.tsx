@@ -1,10 +1,10 @@
 import React from 'react'
-import { CardProps , CardData} from '@/interfaces'
+import { CardModelProps, CardProps } from '@/interfaces'
 import { useState } from 'react'
 
 
-const PostModel:React.FC<CardProps> = ({onClose, onSubmit}) => {
-    const [post, setPost] = useState<CardData>({
+const PostModel:React.FC<CardModelProps> = ({onClose, onSubmit}) => {
+    const [post, setPost] = useState<CardProps>({
         title: 'halima',
         content: 'nothing to say'
     })

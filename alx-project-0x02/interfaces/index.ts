@@ -1,12 +1,12 @@
-export interface CardData {
+export interface CardProps {
     id?: number;
     title: string;
     content: string;
 }
 
-export interface CardProps {
+export interface CardModelProps {
     onClose: () => void;
-    onSubmit: (post: CardData) => void;
+    onSubmit: (post: CardProps) => void;
 }
 
 export interface ButtonProps {
