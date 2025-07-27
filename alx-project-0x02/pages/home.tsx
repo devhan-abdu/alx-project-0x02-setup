@@ -4,24 +4,20 @@ import PostModel from '@/components/common/PostModel';
 import { CardProps } from '@/interfaces';
 import Header from '@/components/layout/Header';
 
-const CardProps = [
+const CardData = [
   {
-    id: 1,
     title: 'Card 1',
     content: 'This is the content of card 1'
   },
   {
-    id: 2,
     title: 'Card 2',
     content: 'This is the content of card 2'
   },
   {
-    id: 3,
     title: 'Card 3',
     content: 'This is the content of card 3'
   },
    {
-    id: 4,
     title: 'Card 4',
     content: 'This is the content of card 4'
   },
@@ -29,7 +25,7 @@ const CardProps = [
 ]
 
 const Home = () => {
-  const [post , setPost] = useState<CardProps[]>(CardProps);
+  const [post , setPost] = useState<CardProps[]>(CardData);
   const [open, setOpen] = useState(false); 
 
   const handleAddPost = (newPost: CardProps) => {
@@ -49,9 +45,12 @@ const Home = () => {
       <div className='flex flex-wrap items-center justify-center place-content-center gap-4'>
       {
         post?.map((card, index) => (
-          <Card key={index} title={card.title} content={card.content} id={card.id} />
+          <Card key={index} title={card.title} content={card.content}  />
         ))
       }
+      <Card title="Card 5" content="This is the content of card 5" />
+      <Card title="Card 6" content="This is the content of card 6" />
+      <Card title="Card 7" content="This is the content of card 7" />
       </div>
     </div>
   )
